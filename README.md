@@ -2,19 +2,29 @@
 
 REST-Rant is an App Where Wsers Can Review Restaurants.
 
-| Method | Path  | Purpose |
-|:---: | :---: | :---:|
-| GET | / | Home page |
-| GET | /places | Places Index Page |
-| POST | /places | Create New Place |
-| GET | /places/new | Form Page for Creating a New Place |
-| GET | /places/:id | Details about a Particular Place |
-| PUT | /places/:id | Update a Particular Place |
-| GET | /places/:id/edit | Form a Page for Editing an Existing Place |
-| DELETE | /places/:id | Delete a Particular Place |
-| POST | /places/:id/rant | Create a Rant (comment) About a Particular Place |
-| DELETE | /places/:id/rant/:rantId | Delete a Rant (comment) About a Particular Place |
-| GET | * | 404 Page (matches any route not defined above) |
+## Routes
+| Method | Path | Purpose |
+| ------ | ------------------------------------- | ----------------------------- |
+| GET | `/` | The home page |
+| GET | `/places` | Index page listing all places |
+| GET | `/places/new` | New form for a place |
+| POST | `/places` | Create a new place |
+| GET | `/places/:id` | Show one place in detail (Associated rants, new rant form, delete rant button) |
+| GET | `/places/:id/edit` | Edit form for a place |
+| PUT | `/places/:id` | Make changes to existing place |
+| DELETE | `/places/:id` | Delete a place |
+| POST | `/places/:id/rant` | Add rant to a place |
+| DELETE | `/places/:id/rant/:rantId` | Delete a rant |
 
-# Data Store for Places (Restaraunts).
-| **Name** (string) | **City** (string) | **State** (string) | **Cuisines** (string) | **Pic** (string) |
+## Database
+
+**PLACES** 
+
+| Field | Type |
+| ---------- | ------------ |
+| _id | Object ID |
+| name | String |
+| city | String |
+| state | String |
+| cuisines | String |
+| pic | String |
